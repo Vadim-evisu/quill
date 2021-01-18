@@ -168,10 +168,11 @@ class Quill {
   }
 
   focus() {
-    const { scrollTop } = this.scrollingContainer;
-    this.selection.focus();
-    this.scrollingContainer.scrollTop = scrollTop;
-    this.scrollIntoView();
+    return
+//     const { scrollTop } = this.scrollingContainer;
+//     this.selection.focus();
+//     this.scrollingContainer.scrollTop = scrollTop;
+//     this.scrollIntoView();
   }
 
   format(name, value, source = Emitter.sources.API) {
