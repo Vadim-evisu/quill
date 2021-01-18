@@ -168,11 +168,10 @@ class Quill {
   }
 
   focus() {
-    return
-//     const { scrollTop } = this.scrollingContainer;
-//     this.selection.focus();
-//     this.scrollingContainer.scrollTop = scrollTop;
-//     this.scrollIntoView();
+    // const { scrollTop } = this.scrollingContainer;
+    // this.selection.focus();
+    // this.scrollingContainer.scrollTop = scrollTop;
+    // this.scrollIntoView();
   }
 
   format(name, value, source = Emitter.sources.API) {
@@ -375,7 +374,7 @@ class Quill {
   }
 
   scrollIntoView() {
-    this.selection.scrollIntoView(this.scrollingContainer);
+    // this.selection.scrollIntoView(this.scrollingContainer);
   }
 
   setContents(delta, source = Emitter.sources.API) {
