@@ -3009,7 +3009,7 @@ var Selection = function () {
     key: 'focus',
     value: function focus() {
       if (this.hasFocus()) return;
-      this.root.focus();
+      // this.root.focus();
       this.setRange(this.savedRange);
     }
   }, {
