@@ -297,7 +297,7 @@ class Quill {
   }
 
   scrollIntoView() {
-    this.selection.scrollIntoView(this.scrollingContainer);
+    // this.selection.scrollIntoView(this.scrollingContainer);
   }
 
   setContents(delta, source = Emitter.sources.API) {

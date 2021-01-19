@@ -1494,7 +1494,7 @@ var Quill = function () {
   }, {
     key: 'scrollIntoView',
     value: function scrollIntoView() {
-      this.selection.scrollIntoView(this.scrollingContainer);
+      // this.selection.scrollIntoView(this.scrollingContainer);
     }
   }, {
     key: 'setContents',
