@@ -271,7 +271,7 @@ class Selection {
     let selection = document.getSelection();
     if (selection == null) return;
     if (startNode != null) {
-      if (!this.hasFocus()) this.root.focus();
+      // if (!this.hasFocus()) this.root.focus();
       let native = (this.getNativeRange() || {}).native;
       if (native == null || force ||
           startNode !== native.startContainer ||

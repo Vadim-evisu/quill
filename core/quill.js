@@ -240,7 +240,7 @@ class Quill {
   }
 
   getSelection(focus = false) {
-    if (focus) this.focus();
+    // if (focus) this.focus();
     this.update();  // Make sure we access getRange with editor in consistent state
     return this.selection.getRange()[0];
   }

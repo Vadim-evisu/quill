@@ -1394,7 +1394,7 @@ var Quill = function () {
     value: function getSelection() {
       var focus = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
 
-      if (focus) this.focus();
+      // if (focus) this.focus();
       this.update(); // Make sure we access getRange with editor in consistent state
       return this.selection.getRange()[0];
     }
@@ -3259,7 +3259,7 @@ var Selection = function () {
       var selection = document.getSelection();
       if (selection == null) return;
       if (startNode != null) {
-        if (!this.hasFocus()) this.root.focus();
+        // if (!this.hasFocus()) this.root.focus();
         var native = (this.getNativeRange() || {}).native;
         if (native == null || force || startNode !== native.startContainer || startOffset !== native.startOffset || endNode !== native.endContainer || endOffset !== native.endOffset) {
 
