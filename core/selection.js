@@ -86,7 +86,7 @@ class Selection {
 
   focus() {
     if (this.hasFocus()) return;
-    // this.root.focus();
+    this.root.focus();
     this.setRange(this.savedRange);
   }
 
@@ -271,7 +271,7 @@ class Selection {
     let selection = document.getSelection();
     if (selection == null) return;
     if (startNode != null) {
-      // if (!this.hasFocus()) this.root.focus();
+      if (!this.hasFocus()) this.root.focus();
       let native = (this.getNativeRange() || {}).native;
       if (native == null || force ||
           startNode !== native.startContainer ||
@@ -296,7 +296,7 @@ class Selection {
     } else {
       selection.removeAllRanges();
       this.root.blur();
-      // document.body.focus();  // root.blur() not enough on IE11+Travis+SauceLabs (but not local VMs)
+      document.body.focus();  // root.blur() not enough on IE11+Travis+SauceLabs (but not local VMs)
     }
   }
 

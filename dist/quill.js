@@ -1235,11 +1235,10 @@ var Quill = function () {
   }, {
     key: 'focus',
     value: function focus() {
-      return;
-      // let scrollTop = this.scrollingContainer.scrollTop;
-      // this.selection.focus();
-      // this.scrollingContainer.scrollTop = scrollTop;
-      // this.scrollIntoView();
+      var scrollTop = this.scrollingContainer.scrollTop;
+      this.selection.focus();
+      this.scrollingContainer.scrollTop = scrollTop;
+      this.scrollIntoView();
     }
   }, {
     key: 'format',
@@ -1494,7 +1493,7 @@ var Quill = function () {
   }, {
     key: 'scrollIntoView',
     value: function scrollIntoView() {
-      // this.selection.scrollIntoView(this.scrollingContainer);
+      this.selection.scrollIntoView(this.scrollingContainer);
     }
   }, {
     key: 'setContents',
@@ -3009,7 +3008,7 @@ var Selection = function () {
     key: 'focus',
     value: function focus() {
       if (this.hasFocus()) return;
-      // this.root.focus();
+      this.root.focus();
       this.setRange(this.savedRange);
     }
   }, {
@@ -3260,7 +3259,7 @@ var Selection = function () {
       var selection = document.getSelection();
       if (selection == null) return;
       if (startNode != null) {
-        // if (!this.hasFocus()) this.root.focus();
+        if (!this.hasFocus()) this.root.focus();
         var native = (this.getNativeRange() || {}).native;
         if (native == null || force || startNode !== native.startContainer || startOffset !== native.startOffset || endNode !== native.endContainer || endOffset !== native.endOffset) {
 
@@ -3281,7 +3280,7 @@ var Selection = function () {
       } else {
         selection.removeAllRanges();
         this.root.blur();
-        // document.body.focus();  // root.blur() not enough on IE11+Travis+SauceLabs (but not local VMs)
+        document.body.focus(); // root.blur() not enough on IE11+Travis+SauceLabs (but not local VMs)
       }
     }
   }, {
